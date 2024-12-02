@@ -1,4 +1,6 @@
 # To Run Python Script in a virtual environment
-python3 -m venv batch-runner-env
+chmod +x build.sh
+chmod +x py_setup.sh
 
-source batch-runner-env/bin/activate
+To Run the Script
+./build.sh
