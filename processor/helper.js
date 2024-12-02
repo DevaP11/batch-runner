@@ -77,6 +77,23 @@ const cognitoConfirmUser = async (email) => {
 }
 
 /**
+* @name isProfileIsAlreadyCreated
+*/
+const checkIfProfileWasAlreadyCreated = async (email) => {
+  const userId = getUuidByString(email?.toLowerCase())
+  const profiles = await dbGetByGSI(configuration.PROFILE_TABLE, 'userId-index', 'userId', userId)
+
+  const isProfileAlreadyCreated = profiles?.length > 0
+  if (isProfileAlreadyCreated) {
+    logger.debug('User Already Has a Default Profile Created')
+    await checkpoint(email, 'createRecommendationEngineUser', 'Success')
+    await checkpoint(email, 'createDefaultProfile', 'Success')
+  }
+
+  return { isProfileAlreadyCreated }
+}
+
+/**
 * @name createRecommendationEngineUser
 */
 const createRecommendationEngineUser = async (email) => {
@@ -122,12 +139,6 @@ const createRecommendationEngineUser = async (email) => {
 const createDefaultProfile = async (email, recommendationUserId) => {
   try {
     const userId = getUuidByString(email?.toLowerCase())
-    const profiles = await dbGetByGSI(configuration.PROFILE_TABLE, 'userId-index', 'userId', userId)
-    if (profiles?.length > 0) {
-      logger.debug('User Already Has a Default Profile Created')
-      await checkpoint(email, 'createDefaultProfile', 'Success')
-      return
-    }
 
     const profile = {
       id: uuidv4(),
@@ -160,5 +171,6 @@ module.exports = {
   doCognitoSignup,
   cognitoConfirmUser,
   createRecommendationEngineUser,
-  createDefaultProfile
+  createDefaultProfile,
+  checkIfProfileWasAlreadyCreated
 }

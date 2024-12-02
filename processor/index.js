@@ -16,8 +16,16 @@ const processor = async (record) => {
 
   await Helper.doCognitoSignup({ email, password: 'Password@1', phoneNumber: '+4400000000' })
   await Helper.cognitoConfirmUser(email)
-  const { recommendationUserId } = await Helper.createRecommendationEngineUser(email)
-  await Helper.createDefaultProfile(email, recommendationUserId)
+
+  /** Check If User Exists in db */
+  /** If Not, Create User in ConsumerTable */
+
+  const { isProfileAlreadyCreated } = await Helper.checkIfProfileWasAlreadyCreated(email)
+
+  if (!isProfileAlreadyCreated) {
+    const { recommendationUserId } = await Helper.createRecommendationEngineUser(email)
+    await Helper.createDefaultProfile(email, recommendationUserId)
+  }
 }
 
 module.exports = {

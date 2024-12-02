@@ -1,72 +1,87 @@
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Creating Checkpointer Table 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Checkpointer Table Successfully Created 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Creating RecordTracker Table 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Started Batching! 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Data loaded 
 __________________________________________________
-12/2/2024, 9:55:59 PM
-Records [ { email: 'deva.pramod+494@diagnal.com' } ]
+12/2/2024, 10:13:56 PM
+Records [ { email: 'powerrangersassemble1494@yahoo1.com' } ]
 __________________________________________________
-12/2/2024, 9:55:59 PM
-Batched Array [ [ { email: 'deva.pramod+494@diagnal.com' } ] ]
+12/2/2024, 10:13:56 PM
+Batched Array [ [ { email: 'powerrangersassemble1494@yahoo1.com' } ] ]
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Running Batch Execution 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Batches Identified [ 'batch_0.csv' ]
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Starting Record Processor 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Current Batch Status - batch_0.csv Unprocessed
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Data loaded 
 __________________________________________________
-12/2/2024, 9:55:59 PM
-Inside Processor { email: 'deva.pramod+494@diagnal.com' }
+12/2/2024, 10:13:56 PM
+Inside Processor { email: 'powerrangersassemble1494@yahoo1.com' }
 __________________________________________________
-12/2/2024, 9:55:59 PM
-Record Id { recordId: 'deva.pramod+494@diagnal.com' }
+12/2/2024, 10:13:56 PM
+Record Id { recordId: 'powerrangersassemble1494@yahoo1.com' }
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 Inside doCognitoSignup {
   userData: {
-    email: 'deva.pramod+494@diagnal.com',
+    email: 'powerrangersassemble1494@yahoo1.com',
     password: 'Password@1',
     phoneNumber: '+4400000000'
   }
 }
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:56 PM
 SignUpCommand {
   att: [
-    { Name: 'email', Value: 'deva.pramod+494@diagnal.com' },
+    { Name: 'email', Value: 'powerrangersassemble1494@yahoo1.com' },
     { Name: 'phone_number', Value: '+4400000000' },
     { Name: 'custom:isPasswordSet', Value: 'true' }
   ]
 }
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:57 PM
 SignUp Successfully Complete 
 __________________________________________________
-12/2/2024, 9:55:59 PM
+12/2/2024, 10:13:57 PM
 Confirm User Successfully Complete 
 __________________________________________________
-12/2/2024, 9:56:00 PM
-Recommendation Engine User 8b2ec478-ee07-4c24-9191-8a1bb58c74b3
+12/2/2024, 10:13:58 PM
+Recommendation Engine User 0478a7a8-ad40-4e24-b49c-4154c968bb57
 __________________________________________________
-12/2/2024, 9:56:00 PM
-User Already Has a Default Profile Created 
+12/2/2024, 10:13:58 PM
+Profile to be saved {
+  id: '2116fc74-01b2-4ead-8240-4eecefb40f62',
+  createdAt: 1733157838,
+  isDefaultProfile: true,
+  profileName: 'Demo Account Profile',
+  userId: '67028571-323f-55f2-98f6-37169b68b7f4',
+  profileImage: 'https://dd5cnndofvsd.cloudfront.net/images/profiles/cinema-clipboard.png',
+  maxRestrictions: 'M18',
+  preferences: { language: 'en-US' },
+  active: true,
+  hasOptedForPin: false,
+  recommendationUserId: '0478a7a8-ad40-4e24-b49c-4154c968bb57'
+}
+__________________________________________________
+12/2/2024, 10:13:58 PM
+Profile Creation Successful 
