@@ -1,66 +1,72 @@
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Creating Checkpointer Table 
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Checkpointer Table Successfully Created 
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Creating RecordTracker Table 
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Started Batching! 
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Data loaded 
 __________________________________________________
-12/2/2024, 8:03:10 PM
-Records [ { email: 'deva.pramod+491@diagnal.com' } ]
+12/2/2024, 9:55:59 PM
+Records [ { email: 'deva.pramod+494@diagnal.com' } ]
 __________________________________________________
-12/2/2024, 8:03:10 PM
-Batched Array [ [ { email: 'deva.pramod+491@diagnal.com' } ] ]
+12/2/2024, 9:55:59 PM
+Batched Array [ [ { email: 'deva.pramod+494@diagnal.com' } ] ]
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Running Batch Execution 
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Batches Identified [ 'batch_0.csv' ]
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Starting Record Processor 
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Current Batch Status - batch_0.csv Unprocessed
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Data loaded 
 __________________________________________________
-12/2/2024, 8:03:10 PM
-Inside Processor { email: 'deva.pramod+491@diagnal.com' }
+12/2/2024, 9:55:59 PM
+Inside Processor { email: 'deva.pramod+494@diagnal.com' }
 __________________________________________________
-12/2/2024, 8:03:10 PM
-Record Id { recordId: 'deva.pramod+491@diagnal.com' }
+12/2/2024, 9:55:59 PM
+Record Id { recordId: 'deva.pramod+494@diagnal.com' }
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 Inside doCognitoSignup {
   userData: {
-    email: 'deva.pramod+491@diagnal.com',
+    email: 'deva.pramod+494@diagnal.com',
     password: 'Password@1',
     phoneNumber: '+4400000000'
   }
 }
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 SignUpCommand {
   att: [
-    { Name: 'email', Value: 'deva.pramod+491@diagnal.com' },
+    { Name: 'email', Value: 'deva.pramod+494@diagnal.com' },
     { Name: 'phone_number', Value: '+4400000000' },
     { Name: 'custom:isPasswordSet', Value: 'true' }
   ]
 }
 __________________________________________________
-12/2/2024, 8:03:10 PM
+12/2/2024, 9:55:59 PM
 SignUp Successfully Complete 
 __________________________________________________
-12/2/2024, 8:03:10 PM
-Email deva.pramod+491@diagnal.com
+12/2/2024, 9:55:59 PM
+Confirm User Successfully Complete 
+__________________________________________________
+12/2/2024, 9:56:00 PM
+Recommendation Engine User 8b2ec478-ee07-4c24-9191-8a1bb58c74b3
+__________________________________________________
+12/2/2024, 9:56:00 PM
+User Already Has a Default Profile Created 

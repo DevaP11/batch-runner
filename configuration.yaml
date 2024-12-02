@@ -1,5 +1,9 @@
 BATCH_SIZE: 5
-NODE_ENV: dev
 INDEX_NAME: email
-COGNITO_CLIENT_ID: 7g7cbnjsi5hfvhpk8re7spt8qq # dev
+# dev
+NODE_ENV: dev
+COGNITO_CLIENT_ID: 7g7cbnjsi5hfvhpk8re7spt8qq
+COGNITO_POOL_ID: ap-south-1_E9T7yOYH0
 AWS_REGION: ap-south-1
+CREATE_RECOMMENDATION_ENGINE_USER: cmgo-dev-xo-create-recommendation-engine-user
+PROFILE_TABLE: MultiProfileTable-cmgo-dev
