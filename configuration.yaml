@@ -1,3 +1,5 @@
 BATCH_SIZE: 5
 NODE_ENV: dev
 INDEX_NAME: email
+COGNITO_CLIENT_ID: 7g7cbnjsi5hfvhpk8re7spt8qq # dev
+AWS_REGION: ap-south-1

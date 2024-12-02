@@ -1,14 +1,14 @@
 const fs = require('fs')
 const util = require('util')
-const Path = require('path')
+const path = require('path')
 
 const yaml = require('js-yaml')
-const CONFIGURATION = yaml.load(fs.readFileSync('./configuration.yaml', 'utf8'))
+const CONFIGURATION = yaml.load(fs.readFileSync(path.join(__dirname, '/../configuration.yaml'), 'utf8'))
 
 const executionStartTime = CONFIGURATION.NODE_ENV !== 'prod' ? '' : new Date().toISOString()
 
-const fileLog = fs.createWriteStream(Path.join(__dirname, `../logs/server_${executionStartTime}.log`), { flags: 'w' })
-const ErrorLog = fs.createWriteStream(Path.join(__dirname, `../logs/error_${executionStartTime}.log`), { flags: 'w' })
+const fileLog = fs.createWriteStream(path.join(__dirname, `../logs/server_${executionStartTime}.log`), { flags: 'w' })
+const ErrorLog = fs.createWriteStream(path.join(__dirname, `../logs/error_${executionStartTime}.log`), { flags: 'w' })
 
 const divider = '_'.repeat(50)
 
@@ -62,6 +62,7 @@ logger.warn = (key1 = '', key2 = '') => {
 }
 
 logger.error = (e1, e2) => {
+  console.error(e1, e2)
   ErrorLog.write(util.format(e1, e2) + '\n')
 }
 

@@ -77,6 +77,7 @@ const createCheckpointer = async () => {
   } catch (err) {
     logger.error('Checkpointer Creation Failed', err)
   }
+  logger.info('Checkpointer Table Successfully Created')
 }
 
 /**
@@ -97,6 +98,14 @@ const initializeBatchTracker = async () => {
   }
 }
 
+const updateBatchTracker = async (batchId, recordsIndex, status) => {
+  /** Save Status In Batch Tracker as Pending */
+  await dbRun(`
+    INSERT OR REPLACE INTO BatchTracker (batchId, records, status)
+    VALUES (?, ?, ?)
+  `, [batchId, recordsIndex, status])
+}
+
 /**
 * @name checkpoint
 */
@@ -108,53 +117,19 @@ const checkpoint = async (recordId, checkpointName, status) => {
 }
 
 /**
-* @name processRecords
+* @name getDataFromBatch
 */
-const processRecords = async (listOfBatches, processorFunction) => {
-  for (const batchId of listOfBatches) {
-    const rtData = await dbGet('SELECT * FROM BatchTracker WHERE batchId = ?', [batchId])
-    const status = rtData?.status
-    logger.debug('Current Batch Status - ' + batchId, (status || 'Unprocessed'))
-
-    if (status === 'Success') {
-      logger.debug('Batch Already Processed', batchId)
-      continue
-    }
-
-    const batchData = await readBatch(batchId)
-
-    const recordsIndex = JSON.stringify(batchData?.map(item => item[CONFIGURATION.INDEX_NAME]))
-
-    /** Save Status In Batch Tracker as Pending */
-    await dbRun(`
-      INSERT OR REPLACE INTO BatchTracker (batchId, records, status)
-      VALUES (?, ?, ?)
-    `, [batchId, recordsIndex, 'Pending'])
-
-    try {
-      const promises = batchData?.map(record => processorFunction(record))
-      await Promise.all(promises) /** Run Promises in Parallel */
-    } catch (err) {
-      /** Save Status In Batch Tracker as Failed */
-      await dbRun(`
-        INSERT OR REPLACE INTO BatchTracker (batchId, records, status)
-        VALUES (?, ?, ?)
-      `, [batchId, [], 'Failed'])
-      return
-    }
-    /** Save Status In Batch Tracker as Success */
-    await dbRun(`
-      INSERT OR REPLACE INTO BatchTracker (batchId, records, status)
-      VALUES (?,?, ?)
-    `, [batchId, recordsIndex, 'Success'])
-  }
+const getDataFromBatch = async (batchId) => {
+  return await dbGet('SELECT * FROM BatchTracker WHERE batchId = ?', [batchId])
 }
 
 module.exports = {
   batchRecords,
   batchList,
   createCheckpointer,
-  checkpoint,
   initializeBatchTracker,
-  processRecords
+  updateBatchTracker,
+  checkpoint,
+  getDataFromBatch,
+  readBatch
 }
