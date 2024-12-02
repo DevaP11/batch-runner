@@ -1,4 +1,4 @@
-const { logger } = require('./helper/server-logger')
+const { logger } = require('../helper/server-logger')
 // const { checkpoint } = require('./helper/utils')
 
 const processor = async (record) => {
