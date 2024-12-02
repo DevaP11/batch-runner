@@ -1,0 +1,3 @@
+BATCH_SIZE: 5
+NODE_ENV: dev
+INDEX_NAME: email

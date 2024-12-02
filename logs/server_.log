@@ -1,0 +1,119 @@
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Creating Checkpointer Table 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Creating RecordTracker Table 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Started Batching! 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Data loaded 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Records [
+  { email: 'abc1@gmail.com' },
+  { email: 'abc2@gmail.com' },
+  { email: 'abc3@gmail.com' },
+  { email: 'abc4@gmail.com' },
+  { email: 'abc5@gmail.com' },
+  { email: 'abc6@gmail.com' },
+  { email: 'ab7@gmail.com' },
+  { email: 'abc8@gmail.com' },
+  { email: 'abc9gmail.com' },
+  { email: 'abc10@gmail.com' },
+  { email: 'abc11@gmail.com' },
+  { email: 'abc23@gmail.com' },
+  { email: 'abc32@gmail.com' },
+  { email: 'abc55@gmail.com' },
+  { email: 'abc56@gmail.com' },
+  { email: 'abc67@gmail.com' },
+  { email: 'abc68@gmail.com' },
+  { email: 'abc69@gmail.com' },
+  { email: 'abc420@gmail.com' },
+  { email: 'abc421@gmail.com' },
+  { email: 'abc444@gmail.com' },
+  { email: 'abc451@gmail.com' },
+  { email: 'abc51@gmail.com' },
+  { email: 'abc33@gmail.com' },
+  { email: 'abc33@gmail.com' },
+  { email: 'abc99@gmail.com' }
+]
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Batched Array [
+  [
+    { email: 'abc1@gmail.com' },
+    { email: 'abc2@gmail.com' },
+    { email: 'abc3@gmail.com' },
+    { email: 'abc4@gmail.com' },
+    { email: 'abc5@gmail.com' }
+  ],
+  [
+    { email: 'abc6@gmail.com' },
+    { email: 'ab7@gmail.com' },
+    { email: 'abc8@gmail.com' },
+    { email: 'abc9gmail.com' },
+    { email: 'abc10@gmail.com' }
+  ],
+  [
+    { email: 'abc11@gmail.com' },
+    { email: 'abc23@gmail.com' },
+    { email: 'abc32@gmail.com' },
+    { email: 'abc55@gmail.com' },
+    { email: 'abc56@gmail.com' }
+  ],
+  [
+    { email: 'abc67@gmail.com' },
+    { email: 'abc68@gmail.com' },
+    { email: 'abc69@gmail.com' },
+    { email: 'abc420@gmail.com' },
+    { email: 'abc421@gmail.com' }
+  ],
+  [
+    { email: 'abc444@gmail.com' },
+    { email: 'abc451@gmail.com' },
+    { email: 'abc51@gmail.com' },
+    { email: 'abc33@gmail.com' },
+    { email: 'abc33@gmail.com' }
+  ],
+  [ { email: 'abc99@gmail.com' } ]
+]
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Running Batch Execution 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Batchs Identified [
+  'batch_0.csv',
+  'batch_1.csv',
+  'batch_2.csv',
+  'batch_3.csv',
+  'batch_4.csv',
+  'batch_5.csv'
+]
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Starting Record Processor 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Current Batch Status - batch_0.csv Pending
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Data loaded 
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Inside Processor { email: 'abc1@gmail.com' }
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Inside Processor { email: 'abc2@gmail.com' }
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Inside Processor { email: 'abc3@gmail.com' }
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Inside Processor { email: 'abc4@gmail.com' }
+__________________________________________________
+12/2/2024, 3:45:46 PM
+Inside Processor { email: 'abc5@gmail.com' }
