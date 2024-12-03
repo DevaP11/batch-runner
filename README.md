@@ -27,3 +27,6 @@ npm i
 
 Batch - a batch is group of records that are to be processed in parallel
 Checkpoint - a checkpoint is the current stage of record processed.
+
+## Streamlit UI
+![image](./assets/sample-response.png)
