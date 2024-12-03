@@ -18,7 +18,7 @@ const colors = {
   error: '\x1b[31m', // Red
   warn: '\x1b[33m', // Yellow
   debug: '\x1b[34m', // Blue
-  verbose: '\e[0;35m', // Magenta
+  verbose: '\x1b[35m', // Magenta
   reset: '\x1b[0m'
 }
 /* eslint-enable */

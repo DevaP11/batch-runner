@@ -9,3 +9,4 @@ CREATE_RECOMMENDATION_ENGINE_USER: cmgo-dev-xo-create-recommendation-engine-user
 PROFILE_TABLE: MultiProfileTable-cmgo-dev
 CONSUMER_DATA_TABLE: ConsumerDataTable-cmgo-dev
 CREATE_MARKETING_USER: cmgo-dev-xo-create-marketing-user
+ENTITLEMENT_TABLE: EntitlementsTable-cmgo-dev

@@ -260,6 +260,43 @@ const createDefaultProfile = async (email, recommendationUserId) => {
   await checkpoint(email, 'createDefaultProfile', 'Success')
 }
 
+/**
+* @name provisionTmDemoEntitlement
+*/
+const provisionTmDemoEntitlement = async (email) => {
+  try {
+    const userId = getUuidByString(email?.toLowerCase())
+    const now = parseInt(Date.now() / 1000)
+
+    const entitlements =
+      (await dbGetByGSI(configuration.ENTITLEMENT_TABLE, 'userId-index', 'userId', userId)) || []
+    if (entitlements?.length > 0) {
+      logger.info('Entitlement Already Exists')
+      return
+    }
+
+    const newEntitlement = {
+      id: uuidv4() /** Unique Identifier for entitlement */,
+      createdAt: now /** The time at which the entitlement was created (seconds) */,
+      updatedAt: now /** The time at which the entitlement was last updated (seconds). This value is changed on each update */,
+      userId /** Unique Identifier for user/account */,
+      periodStart: now - 100 /** The start of entitlement in seconds. Timestamp if passed in milliseconds is converted to seconds */,
+      periodEnd: now /** The start of entitlement in seconds. Timestamp if passed in milliseconds is converted to seconds */,
+      isActive: false /** If entitlement is active or not */,
+      type: 'finite' /** The entitlement type can either be finite or infinite. For infinite entitlements there will be no periodEnd */,
+      orderId: 'custom:tm-demo',
+      productId: 'custom:tm-demo' /** For subscription status and purchased products */
+    }
+
+    await dbPut(configuration.ENTITLEMENT_TABLE, newEntitlement.id, newEntitlement)
+    await checkpoint(email, 'provisionTmDemoEntitlement', 'Success')
+    logger.debug('Entitlement Created')
+  } catch (err) {
+    await checkpoint(email, 'provisionTmDemoEntitlement', 'Failed')
+    throw err
+  }
+}
+
 module.exports = {
   doCognitoSignup,
   cognitoConfirmUser,
@@ -268,5 +305,6 @@ module.exports = {
   checkIfProfileWasAlreadyCreated,
   checkIfUserExists,
   saveUserDetailsToDb,
-  createMarketingUser
+  createMarketingUser,
+  provisionTmDemoEntitlement
 }

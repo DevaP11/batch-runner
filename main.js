@@ -9,19 +9,19 @@ const { processor } = require('./processor')
 @name main
 */
 const main = async () => {
-  logger.info('Creating Checkpointer Table')
+  logger.verbose('Creating Checkpointer Table')
   await Util.createCheckpointer()
 
-  logger.info('Creating RecordTracker Table')
+  logger.verbose('Creating RecordTracker Table')
   await Util.initializeBatchTracker()
 
-  logger.info('Started Batching!')
+  logger.verbose('Started Batching!')
   await Util.batchRecords()
 
-  logger.info('Running Batch Execution')
+  logger.verbose('Running Batch Execution')
   const listOfBatches = Util.batchList()
 
-  logger.info('Starting Record Processor')
+  logger.verbose('Starting Record Processor')
 
   for (const batchId of listOfBatches) {
     const rtData = Util.getDataFromBatch(batchId)

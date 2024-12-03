@@ -32,6 +32,8 @@ const processor = async (record) => {
     const { recommendationUserId } = await Helper.createRecommendationEngineUser(email)
     await Helper.createDefaultProfile(email, recommendationUserId)
   }
+
+  await Helper.provisionTmDemoEntitlement(email)
 }
 
 module.exports = {
