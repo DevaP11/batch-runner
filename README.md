@@ -12,16 +12,12 @@ Developement Tool for running scripts in local machine.
 `python3` and `pip3` are recommended installs along with a minimum node version of 14.x (recommended - 20.x)
 
 Make sure the following permissions are provided for the shell scripts -
-chmod +x build.sh
-chmod +x py_setup.sh
-
-#### To Run Python Script in a virtual environment
-chmod +x build.sh
-chmod +x py_setup.sh
+```chmod +x build.sh```
+```chmod +x py_setup.sh```
 
 #### To Run the Script
-npm i
-./build.sh
+```npm i```
+```./build.sh```
 
 ## Concepts
 
