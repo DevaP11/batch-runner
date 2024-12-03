@@ -13,12 +13,18 @@ const processor = async (record) => {
   logger.debug('Record Id', { recordId })
 
   const email = record?.email
+  const phoneNumber = '+4400000000'
 
-  await Helper.doCognitoSignup({ email, password: 'Password@1', phoneNumber: '+4400000000' })
+  await Helper.doCognitoSignup({ email, password: 'Password@1', phoneNumber })
   await Helper.cognitoConfirmUser(email)
 
   /** Check If User Exists in db */
-  /** If Not, Create User in ConsumerTable */
+  const { doesAccountExist } = await Helper.checkIfUserExists(email)
+
+  if (!doesAccountExist) {
+    const { marketingId } = await Helper.createMarketingUser({ email })
+    await Helper.saveUserDetailsToDb({ email, phoneNumber, marketingId }) /** If Not, Create User in ConsumerTable */
+  }
 
   const { isProfileAlreadyCreated } = await Helper.checkIfProfileWasAlreadyCreated(email)
 

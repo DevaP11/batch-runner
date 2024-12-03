@@ -9,11 +9,25 @@ process.env.AWS_REGION = configuration.AWS_REGION
 
 const { logger } = require('../helper/server-logger')
 const { checkpoint } = require('../helper/utils')
-const { Aws: { lambdaInvoke, dbPut, dbGetByGSI }, util: { JSONparse } } = require('hydra/dist/lib')
+const { Aws: { lambdaInvoke, dbPut, dbGetByGSI, dbGet }, util: { JSONparse }, Security: { createOneWayHash } } = require('hydra/dist/lib')
 
 const { CognitoIdentityProviderClient, SignUpCommand, AdminConfirmSignUpCommand } = require('@aws-sdk/client-cognito-identity-provider')
 const client = new CognitoIdentityProviderClient({ region: configuration.AWS_REGION })
 
+/**
+* @name checkIfUserExists
+*/
+const checkIfUserExists = async (email) => {
+  try {
+    const userId = getUuidByString(email?.toLowerCase())
+    const account = await dbGet(configuration.CONSUMER_DATA_TABLE, userId)
+    await checkpoint(email, 'checkIfUserExists', 'Success')
+    return { doesAccountExist: Boolean(account) }
+  } catch (err) {
+    await checkpoint(email, 'checkIfUserExists', 'Failed')
+    throw err
+  }
+}
 /**
  * @name doCognitoSignup
  * @param {object} userData Need to have email and password and phoneNumber
@@ -74,6 +88,85 @@ const cognitoConfirmUser = async (email) => {
   }
   logger.debug('Confirm User Successfully Complete')
   await checkpoint(email, 'cognitoConfirmUser', 'Success')
+}
+
+/**
+* @name createMarketingUser
+*/
+const createMarketingUser = async ({ email }) => {
+  try {
+    const createMarketingUserParams = {
+      email,
+      name: email,
+      marketingAttributes: {
+        countryCode: 'MY',
+        isRegistered: true
+      },
+      userId: getUuidByString(email?.toLowerCase()),
+      isPromotionsEnabled: false
+    }
+
+    logger.debug('Create Marketing User Params', createMarketingUserParams)
+
+    const createMarketingUserLambdaResponse =
+      {
+        ...(await lambdaInvoke(configuration.CREATE_MARKETING_USER, {
+          body: createMarketingUserParams
+        }))
+      }
+        .Payload
+
+    logger.debug('Marketing Api Response', createMarketingUserLambdaResponse)
+    const marketingId = JSONparse(
+      createMarketingUserLambdaResponse?.body
+    )?.data?.marketingId
+
+    if (!marketingId) {
+      await checkpoint(email, 'createMarketingUser', 'Failed')
+      throw new Error('MARKETING_ID_NOT_CREATED', { cause: { createMarketingUserLambdaResponse } })
+    }
+
+    logger.debug('Marketing User Created Successfully', marketingId)
+    await checkpoint(email, 'createMarketingUser', 'Success')
+    return { marketingId }
+  } catch (err) {
+    await checkpoint(email, 'createMarketingUser', 'Failed')
+    throw err
+  }
+}
+
+/**
+* @name saveUserDetailsToDb
+*/
+const saveUserDetailsToDb = async ({ email, phoneNumber, marketingId }) => {
+  try {
+    const userDetails = {
+      id: getUuidByString(email?.toLowerCase()),
+      createdAt: Math.floor(Date.now() / 1000),
+      email,
+      phoneNumber: phoneNumber || '',
+      accountSettings: {
+        enablePushNotifications: true,
+        acceptedTos: true
+      },
+      lastLoginAt: 0, /** Initialized at login */
+      lastLoginDeviceId: '',
+      language: 'en-US',
+      contextIds: {
+        marketingId
+      },
+      isEnabled: true,
+      countryCode: 'MY',
+      isPromotionsEnabled: false,
+      emailHash: createOneWayHash(email) /** for analytics */
+    }
+
+    await dbPut(configuration.CONSUMER_DATA_TABLE, userDetails.id, userDetails)
+    await checkpoint(email, 'saveUserDetailsToDb', 'Success')
+  } catch (err) {
+    await checkpoint(email, 'saveUserDetailsToDb', 'Failed')
+    throw err
+  }
 }
 
 /**
@@ -172,5 +265,8 @@ module.exports = {
   cognitoConfirmUser,
   createRecommendationEngineUser,
   createDefaultProfile,
-  checkIfProfileWasAlreadyCreated
+  checkIfProfileWasAlreadyCreated,
+  checkIfUserExists,
+  saveUserDetailsToDb,
+  createMarketingUser
 }

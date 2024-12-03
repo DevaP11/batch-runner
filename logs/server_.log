@@ -1,87 +1,110 @@
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Creating Checkpointer Table 
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Checkpointer Table Successfully Created 
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Creating RecordTracker Table 
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Started Batching! 
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Data loaded 
 __________________________________________________
-12/2/2024, 10:13:56 PM
-Records [ { email: 'powerrangersassemble1494@yahoo1.com' } ]
+12/3/2024, 11:24:09 AM
+Records [ { email: 'powerrangersassemble1480@yahoo.com' } ]
 __________________________________________________
-12/2/2024, 10:13:56 PM
-Batched Array [ [ { email: 'powerrangersassemble1494@yahoo1.com' } ] ]
+12/3/2024, 11:24:09 AM
+Batched Array [ [ { email: 'powerrangersassemble1480@yahoo.com' } ] ]
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Running Batch Execution 
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Batches Identified [ 'batch_0.csv' ]
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Starting Record Processor 
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Current Batch Status - batch_0.csv Unprocessed
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Data loaded 
 __________________________________________________
-12/2/2024, 10:13:56 PM
-Inside Processor { email: 'powerrangersassemble1494@yahoo1.com' }
+12/3/2024, 11:24:09 AM
+Inside Processor { email: 'powerrangersassemble1480@yahoo.com' }
 __________________________________________________
-12/2/2024, 10:13:56 PM
-Record Id { recordId: 'powerrangersassemble1494@yahoo1.com' }
+12/3/2024, 11:24:09 AM
+Record Id { recordId: 'powerrangersassemble1480@yahoo.com' }
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 Inside doCognitoSignup {
   userData: {
-    email: 'powerrangersassemble1494@yahoo1.com',
+    email: 'powerrangersassemble1480@yahoo.com',
     password: 'Password@1',
     phoneNumber: '+4400000000'
   }
 }
 __________________________________________________
-12/2/2024, 10:13:56 PM
+12/3/2024, 11:24:09 AM
 SignUpCommand {
   att: [
-    { Name: 'email', Value: 'powerrangersassemble1494@yahoo1.com' },
+    { Name: 'email', Value: 'powerrangersassemble1480@yahoo.com' },
     { Name: 'phone_number', Value: '+4400000000' },
     { Name: 'custom:isPasswordSet', Value: 'true' }
   ]
 }
 __________________________________________________
-12/2/2024, 10:13:57 PM
+12/3/2024, 11:24:10 AM
 SignUp Successfully Complete 
 __________________________________________________
-12/2/2024, 10:13:57 PM
+12/3/2024, 11:24:10 AM
 Confirm User Successfully Complete 
 __________________________________________________
-12/2/2024, 10:13:58 PM
-Recommendation Engine User 0478a7a8-ad40-4e24-b49c-4154c968bb57
+12/3/2024, 11:24:10 AM
+Create Marketing User Params {
+  email: 'powerrangersassemble1480@yahoo.com',
+  name: 'powerrangersassemble1480@yahoo.com',
+  marketingAttributes: { countryCode: 'MY', isRegistered: true },
+  userId: 'cf3a0d4b-d7de-5105-a000-b583e932255b',
+  isPromotionsEnabled: false
+}
 __________________________________________________
-12/2/2024, 10:13:58 PM
+12/3/2024, 11:24:11 AM
+Marketing Api Response {
+  statusCode: 200,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
+    'Cache-Control': 'no-store'
+  },
+  body: '{"status":"Success","data":{"marketingId":"47f39cf1-7cf9-4d3c-a3c2-73136d4e7c4e"}}'
+}
+__________________________________________________
+12/3/2024, 11:24:11 AM
+Marketing User Created Successfully 47f39cf1-7cf9-4d3c-a3c2-73136d4e7c4e
+__________________________________________________
+12/3/2024, 11:24:14 AM
+Recommendation Engine User bd6e1e8b-773d-4fcf-ba5f-5a89b4942e0c
+__________________________________________________
+12/3/2024, 11:24:14 AM
 Profile to be saved {
-  id: '2116fc74-01b2-4ead-8240-4eecefb40f62',
-  createdAt: 1733157838,
+  id: '9fcffbf6-eebb-414a-90be-d0a097d2503b',
+  createdAt: 1733205254,
   isDefaultProfile: true,
   profileName: 'Demo Account Profile',
-  userId: '67028571-323f-55f2-98f6-37169b68b7f4',
+  userId: 'cf3a0d4b-d7de-5105-a000-b583e932255b',
   profileImage: 'https://dd5cnndofvsd.cloudfront.net/images/profiles/cinema-clipboard.png',
   maxRestrictions: 'M18',
   preferences: { language: 'en-US' },
   active: true,
   hasOptedForPin: false,
-  recommendationUserId: '0478a7a8-ad40-4e24-b49c-4154c968bb57'
+  recommendationUserId: 'bd6e1e8b-773d-4fcf-ba5f-5a89b4942e0c'
 }
 __________________________________________________
-12/2/2024, 10:13:58 PM
+12/3/2024, 11:24:14 AM
 Profile Creation Successful 
