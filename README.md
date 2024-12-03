@@ -20,4 +20,10 @@ chmod +x build.sh
 chmod +x py_setup.sh
 
 #### To Run the Script
+npm i
 ./build.sh
+
+## Concepts
+
+Batch - a batch is group of records that are to be processed in parallel
+Checkpoint - a checkpoint is the current stage of record processed.
