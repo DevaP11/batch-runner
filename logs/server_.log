@@ -1,72 +1,117 @@
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Creating Checkpointer Table 
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Checkpointer Table Successfully Created 
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Creating RecordTracker Table 
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Started Batching! 
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Data loaded 
 __________________________________________________
-12/3/2024, 11:38:42 AM
-Records [ { email: 'powerrangersassemble1480@yahoo.com' } ]
+12/4/2024, 5:28:46 PM
+Records [ { email: 'juliancasablancas2@diagnal.com' } ]
 __________________________________________________
-12/3/2024, 11:38:42 AM
-Batched Array [ [ { email: 'powerrangersassemble1480@yahoo.com' } ] ]
+12/4/2024, 5:28:46 PM
+Batched Array [ [ { email: 'juliancasablancas2@diagnal.com' } ] ]
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Running Batch Execution 
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Batches Identified [ 'batch_0.csv' ]
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Starting Record Processor 
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Current Batch Status - batch_0.csv Unprocessed
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Data loaded 
 __________________________________________________
-12/3/2024, 11:38:42 AM
-Inside Processor { email: 'powerrangersassemble1480@yahoo.com' }
+12/4/2024, 5:28:46 PM
+Inside Processor { email: 'juliancasablancas2@diagnal.com' }
 __________________________________________________
-12/3/2024, 11:38:42 AM
-Record Id { recordId: 'powerrangersassemble1480@yahoo.com' }
+12/4/2024, 5:28:46 PM
+Record Id { recordId: 'juliancasablancas2@diagnal.com' }
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 Inside doCognitoSignup {
   userData: {
-    email: 'powerrangersassemble1480@yahoo.com',
+    email: 'juliancasablancas2@diagnal.com',
     password: 'Password@1',
     phoneNumber: '+4400000000'
   }
 }
 __________________________________________________
-12/3/2024, 11:38:42 AM
+12/4/2024, 5:28:46 PM
 SignUpCommand {
   att: [
-    { Name: 'email', Value: 'powerrangersassemble1480@yahoo.com' },
+    { Name: 'email', Value: 'juliancasablancas2@diagnal.com' },
     { Name: 'phone_number', Value: '+4400000000' },
+    { Name: 'email_verified', Value: 'true' },
     { Name: 'custom:isPasswordSet', Value: 'true' }
   ]
 }
 __________________________________________________
-12/3/2024, 11:38:43 AM
+12/4/2024, 5:28:47 PM
 SignUp Successfully Complete 
 __________________________________________________
-12/3/2024, 11:38:43 AM
+12/4/2024, 5:28:47 PM
+Set Password Successfully Complete 
+__________________________________________________
+12/4/2024, 5:28:47 PM
 Confirm User Successfully Complete 
 __________________________________________________
-12/3/2024, 11:38:43 AM
-User Already Has a Default Profile Created 
+12/4/2024, 5:28:48 PM
+Create Marketing User Params {
+  email: 'juliancasablancas2@diagnal.com',
+  name: 'juliancasablancas2@diagnal.com',
+  marketingAttributes: { countryCode: 'MY', isRegistered: true },
+  userId: 'b74dcab4-ea7e-5525-92ba-ad3696b57a89',
+  isPromotionsEnabled: false
+}
 __________________________________________________
-12/3/2024, 11:38:43 AM
-Entitlement Already Exists 
+12/4/2024, 5:28:49 PM
+Marketing Api Response {
+  statusCode: 200,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
+    'Cache-Control': 'no-store'
+  },
+  body: '{"status":"Success","data":{"marketingId":"3a111069-aee8-4287-82bd-0aa5099199cf"}}'
+}
+__________________________________________________
+12/4/2024, 5:28:49 PM
+Marketing User Created Successfully 3a111069-aee8-4287-82bd-0aa5099199cf
+__________________________________________________
+12/4/2024, 5:28:53 PM
+Recommendation Engine User a975045d-8825-4309-a2b6-ecf10807c770
+__________________________________________________
+12/4/2024, 5:28:53 PM
+Profile to be saved {
+  id: '76f14255-7375-4f9a-9b9f-77f788293d92',
+  createdAt: 1733313533,
+  isDefaultProfile: true,
+  profileName: 'Demo Account Profile',
+  userId: 'b74dcab4-ea7e-5525-92ba-ad3696b57a89',
+  profileImage: 'https://dd5cnndofvsd.cloudfront.net/images/profiles/cinema-clipboard.png',
+  maxRestrictions: 'M18',
+  preferences: { language: 'en-US' },
+  active: true,
+  hasOptedForPin: false,
+  recommendationUserId: 'a975045d-8825-4309-a2b6-ecf10807c770'
+}
+__________________________________________________
+12/4/2024, 5:28:54 PM
+Profile Creation Successful 
+__________________________________________________
+12/4/2024, 5:28:55 PM
+Entitlement Created 

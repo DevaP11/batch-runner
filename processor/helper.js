@@ -11,7 +11,7 @@ const { logger } = require('../helper/server-logger')
 const { checkpoint } = require('../helper/utils')
 const { Aws: { lambdaInvoke, dbPut, dbGetByGSI, dbGet }, util: { JSONparse }, Security: { createOneWayHash } } = require('hydra/dist/lib')
 
-const { CognitoIdentityProviderClient, SignUpCommand, AdminConfirmSignUpCommand } = require('@aws-sdk/client-cognito-identity-provider')
+const { CognitoIdentityProviderClient, AdminCreateUserCommand, AdminConfirmSignUpCommand, AdminSetUserPasswordCommand } = require('@aws-sdk/client-cognito-identity-provider')
 const client = new CognitoIdentityProviderClient({ region: configuration.AWS_REGION })
 
 /**
@@ -37,8 +37,10 @@ const doCognitoSignup = async (userData) => {
   try {
     const signUpParams = {
       ClientId: configuration.COGNITO_CLIENT_ID,
+      UserPoolId: configuration.COGNITO_POOL_ID,
       Username: userData.email,
       Password: userData.password,
+      MessageAction: 'SUPPRESS',
       UserAttributes: [
         {
           Name: 'email',
@@ -49,13 +51,17 @@ const doCognitoSignup = async (userData) => {
           Value: userData.phoneNumber
         },
         {
+          Name: 'email_verified',
+          Value: 'true'
+        },
+        {
           Name: 'custom:isPasswordSet',
           Value: 'true' /** Marking Cognito Password as Set-> No Need to do set password flow */
         }
       ]
     }
 
-    const command = new SignUpCommand(signUpParams)
+    const command = new AdminCreateUserCommand(signUpParams)
     logger.debug('SignUpCommand', { att: signUpParams.UserAttributes })
     await client.send(command)
   } catch (err) {
@@ -67,6 +73,26 @@ const doCognitoSignup = async (userData) => {
   }
   logger.debug('SignUp Successfully Complete')
   await checkpoint(userData.email, 'doCognitoSignup', 'Success')
+}
+
+/**
+* @name cognitoSetPassword
+*/
+const cognitoSetPassword = async (email, password) => {
+  try {
+    const adminSetPassword = new AdminSetUserPasswordCommand({
+      Password: password,
+      UserPoolId: configuration.COGNITO_POOL_ID,
+      Username: email,
+      Permanent: true
+    })
+    await client.send(adminSetPassword)
+  } catch (err) {
+    await checkpoint(email, 'cognitoSetPassword', 'Failed')
+    throw err
+  }
+  logger.debug('Set Password Successfully Complete')
+  await checkpoint(email, 'cognitoSetPassword', 'Success')
 }
 
 /**
@@ -280,8 +306,8 @@ const provisionTmDemoEntitlement = async (email) => {
       createdAt: now /** The time at which the entitlement was created (seconds) */,
       updatedAt: now /** The time at which the entitlement was last updated (seconds). This value is changed on each update */,
       userId /** Unique Identifier for user/account */,
-      periodStart: now - 100 /** The start of entitlement in seconds. Timestamp if passed in milliseconds is converted to seconds */,
-      periodEnd: now /** The start of entitlement in seconds. Timestamp if passed in milliseconds is converted to seconds */,
+      periodStart: now /** The start of entitlement in seconds. Timestamp if passed in milliseconds is converted to seconds */,
+      periodEnd: now + 15778458/** The start of entitlement in seconds. Timestamp if passed in milliseconds is converted to seconds */,
       isActive: false /** If entitlement is active or not */,
       type: 'finite' /** The entitlement type can either be finite or infinite. For infinite entitlements there will be no periodEnd */,
       orderId: 'custom:tm-demo',
@@ -306,5 +332,6 @@ module.exports = {
   checkIfUserExists,
   saveUserDetailsToDb,
   createMarketingUser,
-  provisionTmDemoEntitlement
+  provisionTmDemoEntitlement,
+  cognitoSetPassword
 }

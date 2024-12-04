@@ -14,8 +14,10 @@ const processor = async (record) => {
 
   const email = record?.email
   const phoneNumber = '+4400000000'
+  const password = 'Password@1'
 
-  await Helper.doCognitoSignup({ email, password: 'Password@1', phoneNumber })
+  await Helper.doCognitoSignup({ email, password, phoneNumber })
+  await Helper.cognitoSetPassword(email, password)
   await Helper.cognitoConfirmUser(email)
 
   /** Check If User Exists in db */
