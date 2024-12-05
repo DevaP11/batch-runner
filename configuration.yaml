@@ -11,13 +11,24 @@ INDEX_NAME: email
 # CREATE_MARKETING_USER: cmgo-dev-xo-create-marketing-user
 # ENTITLEMENT_TABLE: EntitlementsTable-cmgo-dev
 
-# qa
-NODE_ENV: qa
-COGNITO_POOL_ID: ap-northeast-1_71vS0rs8p
-COGNITO_CLIENT_ID: 26ufqua82jvq42oft67mshpuv
-AWS_REGION: ap-northeast-1
-CREATE_RECOMMENDATION_ENGINE_USER: cmgo-qa-xo-create-recommendation-engine-user
-PROFILE_TABLE: MultiProfileTable-cmgo-qa
-CONSUMER_DATA_TABLE: ConsumerDataTable-cmgo-qa
-CREATE_MARKETING_USER: cmgo-qa-xo-create-marketing-user
-ENTITLEMENT_TABLE: EntitlementsTable-cmgo-qa
+# # qa
+# NODE_ENV: qa
+# COGNITO_POOL_ID: ap-northeast-1_71vS0rs8p
+# COGNITO_CLIENT_ID: 26ufqua82jvq42oft67mshpuv
+# AWS_REGION: ap-northeast-1
+# CREATE_RECOMMENDATION_ENGINE_USER: cmgo-qa-xo-create-recommendation-engine-user
+# PROFILE_TABLE: MultiProfileTable-cmgo-qa
+# CONSUMER_DATA_TABLE: ConsumerDataTable-cmgo-qa
+# CREATE_MARKETING_USER: cmgo-qa-xo-create-marketing-user
+# ENTITLEMENT_TABLE: EntitlementsTable-cmgo-qa
+
+# staging
+NODE_ENV: staging
+COGNITO_POOL_ID: ap-northeast-2_J1C4WV44R
+COGNITO_CLIENT_ID: 1udbvrpe08v217jhurkgps85ad
+AWS_REGION: ap-northeast-2
+CREATE_RECOMMENDATION_ENGINE_USER: cmgo-staging-xo-create-recommendation-engine-user
+PROFILE_TABLE: MultiProfileTable-cmgo-staging
+CONSUMER_DATA_TABLE: ConsumerDataTable-cmgo-staging
+CREATE_MARKETING_USER: cmgo-staging-xo-create-marketing-user
+ENTITLEMENT_TABLE: EntitlementsTable-cmgo-staging

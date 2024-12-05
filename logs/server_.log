@@ -1,47 +1,47 @@
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Creating Checkpointer Table 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Checkpointer Table Successfully Created 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Creating RecordTracker Table 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Started Batching! 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Data loaded 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Records [ { email: 'juliancasablancas2@diagnal.com' } ]
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Batched Array [ [ { email: 'juliancasablancas2@diagnal.com' } ] ]
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Running Batch Execution 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Batches Identified [ 'batch_0.csv' ]
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Starting Record Processor 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Current Batch Status - batch_0.csv Unprocessed
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Data loaded 
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Inside Processor { email: 'juliancasablancas2@diagnal.com' }
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Record Id { recordId: 'juliancasablancas2@diagnal.com' }
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 Inside doCognitoSignup {
   userData: {
     email: 'juliancasablancas2@diagnal.com',
@@ -50,7 +50,7 @@ Inside doCognitoSignup {
   }
 }
 __________________________________________________
-12/4/2024, 5:28:46 PM
+12/5/2024, 2:59:00 PM
 SignUpCommand {
   att: [
     { Name: 'email', Value: 'juliancasablancas2@diagnal.com' },
@@ -60,16 +60,16 @@ SignUpCommand {
   ]
 }
 __________________________________________________
-12/4/2024, 5:28:47 PM
+12/5/2024, 2:59:02 PM
 SignUp Successfully Complete 
 __________________________________________________
-12/4/2024, 5:28:47 PM
+12/5/2024, 2:59:02 PM
 Set Password Successfully Complete 
 __________________________________________________
-12/4/2024, 5:28:47 PM
+12/5/2024, 2:59:02 PM
 Confirm User Successfully Complete 
 __________________________________________________
-12/4/2024, 5:28:48 PM
+12/5/2024, 2:59:03 PM
 Create Marketing User Params {
   email: 'juliancasablancas2@diagnal.com',
   name: 'juliancasablancas2@diagnal.com',
@@ -78,7 +78,7 @@ Create Marketing User Params {
   isPromotionsEnabled: false
 }
 __________________________________________________
-12/4/2024, 5:28:49 PM
+12/5/2024, 2:59:05 PM
 Marketing Api Response {
   statusCode: 200,
   headers: {
@@ -89,16 +89,16 @@ Marketing Api Response {
   body: '{"status":"Success","data":{"marketingId":"3a111069-aee8-4287-82bd-0aa5099199cf"}}'
 }
 __________________________________________________
-12/4/2024, 5:28:49 PM
+12/5/2024, 2:59:05 PM
 Marketing User Created Successfully 3a111069-aee8-4287-82bd-0aa5099199cf
 __________________________________________________
-12/4/2024, 5:28:53 PM
-Recommendation Engine User a975045d-8825-4309-a2b6-ecf10807c770
+12/5/2024, 2:59:11 PM
+Recommendation Engine User fe331879-9118-413b-b612-b522692aa18f
 __________________________________________________
-12/4/2024, 5:28:53 PM
+12/5/2024, 2:59:11 PM
 Profile to be saved {
-  id: '76f14255-7375-4f9a-9b9f-77f788293d92',
-  createdAt: 1733313533,
+  id: 'ce17ba0d-b4d0-4a40-86f1-442140cd3668',
+  createdAt: 1733390951,
   isDefaultProfile: true,
   profileName: 'Demo Account Profile',
   userId: 'b74dcab4-ea7e-5525-92ba-ad3696b57a89',
@@ -107,11 +107,11 @@ Profile to be saved {
   preferences: { language: 'en-US' },
   active: true,
   hasOptedForPin: false,
-  recommendationUserId: 'a975045d-8825-4309-a2b6-ecf10807c770'
+  recommendationUserId: 'fe331879-9118-413b-b612-b522692aa18f'
 }
 __________________________________________________
-12/4/2024, 5:28:54 PM
+12/5/2024, 2:59:12 PM
 Profile Creation Successful 
 __________________________________________________
-12/4/2024, 5:28:55 PM
+12/5/2024, 2:59:13 PM
 Entitlement Created 
