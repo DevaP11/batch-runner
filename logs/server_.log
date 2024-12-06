@@ -1,84 +1,84 @@
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Creating Checkpointer Table 
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Checkpointer Table Successfully Created 
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Creating RecordTracker Table 
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Started Batching! 
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Data loaded 
 __________________________________________________
-12/5/2024, 2:59:00 PM
-Records [ { email: 'juliancasablancas2@diagnal.com' } ]
+12/6/2024, 11:40:08 AM
+Records [ { email: 'cornerstone@diagnal.com' } ]
 __________________________________________________
-12/5/2024, 2:59:00 PM
-Batched Array [ [ { email: 'juliancasablancas2@diagnal.com' } ] ]
+12/6/2024, 11:40:08 AM
+Batched Array [ [ { email: 'cornerstone@diagnal.com' } ] ]
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Running Batch Execution 
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Batches Identified [ 'batch_0.csv' ]
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Starting Record Processor 
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Current Batch Status - batch_0.csv Unprocessed
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Data loaded 
 __________________________________________________
-12/5/2024, 2:59:00 PM
-Inside Processor { email: 'juliancasablancas2@diagnal.com' }
+12/6/2024, 11:40:08 AM
+Inside Processor { email: 'cornerstone@diagnal.com' }
 __________________________________________________
-12/5/2024, 2:59:00 PM
-Record Id { recordId: 'juliancasablancas2@diagnal.com' }
+12/6/2024, 11:40:08 AM
+Record Id { recordId: 'cornerstone@diagnal.com' }
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 Inside doCognitoSignup {
   userData: {
-    email: 'juliancasablancas2@diagnal.com',
+    email: 'cornerstone@diagnal.com',
     password: 'Password@1',
     phoneNumber: '+4400000000'
   }
 }
 __________________________________________________
-12/5/2024, 2:59:00 PM
+12/6/2024, 11:40:08 AM
 SignUpCommand {
   att: [
-    { Name: 'email', Value: 'juliancasablancas2@diagnal.com' },
+    { Name: 'email', Value: 'cornerstone@diagnal.com' },
     { Name: 'phone_number', Value: '+4400000000' },
     { Name: 'email_verified', Value: 'true' },
     { Name: 'custom:isPasswordSet', Value: 'true' }
   ]
 }
 __________________________________________________
-12/5/2024, 2:59:02 PM
+12/6/2024, 11:40:10 AM
 SignUp Successfully Complete 
 __________________________________________________
-12/5/2024, 2:59:02 PM
+12/6/2024, 11:40:10 AM
 Set Password Successfully Complete 
 __________________________________________________
-12/5/2024, 2:59:02 PM
+12/6/2024, 11:40:10 AM
 Confirm User Successfully Complete 
 __________________________________________________
-12/5/2024, 2:59:03 PM
+12/6/2024, 11:40:11 AM
 Create Marketing User Params {
-  email: 'juliancasablancas2@diagnal.com',
-  name: 'juliancasablancas2@diagnal.com',
+  email: 'cornerstone@diagnal.com',
+  name: 'cornerstone@diagnal.com',
   marketingAttributes: { countryCode: 'MY', isRegistered: true },
-  userId: 'b74dcab4-ea7e-5525-92ba-ad3696b57a89',
+  userId: '32006c28-b464-5a57-b085-473fede7cc07',
   isPromotionsEnabled: false
 }
 __________________________________________________
-12/5/2024, 2:59:05 PM
+12/6/2024, 11:40:13 AM
 Marketing Api Response {
   statusCode: 200,
   headers: {
@@ -86,32 +86,29 @@ Marketing Api Response {
     'Access-Control-Allow-Credentials': true,
     'Cache-Control': 'no-store'
   },
-  body: '{"status":"Success","data":{"marketingId":"3a111069-aee8-4287-82bd-0aa5099199cf"}}'
+  body: '{"status":"Success","data":{"marketingId":"f7ca6c01-aa09-418d-a187-0e932f373666"}}'
 }
 __________________________________________________
-12/5/2024, 2:59:05 PM
-Marketing User Created Successfully 3a111069-aee8-4287-82bd-0aa5099199cf
+12/6/2024, 11:40:13 AM
+Marketing User Created Successfully f7ca6c01-aa09-418d-a187-0e932f373666
 __________________________________________________
-12/5/2024, 2:59:11 PM
-Recommendation Engine User fe331879-9118-413b-b612-b522692aa18f
+12/6/2024, 11:40:18 AM
+Recommendation Engine User 22665685-4800-47b6-9812-97c1a586aec8
 __________________________________________________
-12/5/2024, 2:59:11 PM
+12/6/2024, 11:40:18 AM
 Profile to be saved {
-  id: 'ce17ba0d-b4d0-4a40-86f1-442140cd3668',
-  createdAt: 1733390951,
+  id: '83ebb9d0-c676-4c59-8bd3-3a23ae862f3b',
+  createdAt: 1733465418,
   isDefaultProfile: true,
   profileName: 'Demo Account Profile',
-  userId: 'b74dcab4-ea7e-5525-92ba-ad3696b57a89',
+  userId: '32006c28-b464-5a57-b085-473fede7cc07',
   profileImage: 'https://dd5cnndofvsd.cloudfront.net/images/profiles/cinema-clipboard.png',
   maxRestrictions: 'M18',
   preferences: { language: 'en-US' },
   active: true,
   hasOptedForPin: false,
-  recommendationUserId: 'fe331879-9118-413b-b612-b522692aa18f'
+  recommendationUserId: '22665685-4800-47b6-9812-97c1a586aec8'
 }
 __________________________________________________
-12/5/2024, 2:59:12 PM
+12/6/2024, 11:40:19 AM
 Profile Creation Successful 
-__________________________________________________
-12/5/2024, 2:59:13 PM
-Entitlement Created 
